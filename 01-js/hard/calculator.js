@@ -16,6 +16,60 @@
   Once you've implemented the logic, test your code by running
 */
 
-class Calculator {}
+class Calculator {
+  result = 0;
+  constructor() {
+    this.result = 0;
+  }
+
+  add = (num) => {
+    this.result = this.result + num;
+    return this.result;
+  };
+  subtract = (num) => {
+    this.result = this.result - num;
+    return this.result;
+  };
+  multiply = (num) => {
+    this.result = this.result * num;
+    return this.result;
+  };
+  divide = (num) => {
+    if (num != 0) {
+      this.result = this.result / num;
+      return this.result;
+    } else {
+      throw new Error('cannot divide by zero');
+    }
+  };
+  clear = () => {
+    this.result = 0;
+  };
+
+  getResult = () => {
+    return this.result;
+  };
+
+  calculate(expression) {
+    // Remove extra spaces and validate the expression
+    const cleanedExpression = expression.replace(/\s+/g, '').trim();
+    // if (!/^[0-9+\-*/\(\) ]+$/.test(cleanedExpression)) {
+    //   throw new Error('Invalid characters in the expression');
+    // }
+
+    // Evaluate the expression using eval
+    try {
+      this.result = eval(cleanedExpression);
+      if (isNaN(this.result) || !isFinite(this.result)) {
+        throw new Error('Invalid expression');
+      }
+    } catch (error) {
+      throw new Error('Error evaluating the expression');
+    }
+  }
+}
+
+// let calc = new Calculator();
+// console.log(calc.add(5));
 
 module.exports = Calculator;
