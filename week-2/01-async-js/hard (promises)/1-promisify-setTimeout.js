@@ -14,3 +14,6 @@ const p = wait(4);
 p.then((data) => {
   console.log(data);
 });
+
+module.exports = wait;
+//>>>>>>> a39ff95b395681909e6fa6721382e1bd6578d9de
