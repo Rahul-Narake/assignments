@@ -4,7 +4,6 @@
  * Return a promise.all which return the time in milliseconds it takes to complete the entire operation.
  */
 
-<<<<<<< HEAD
 function waitOneSecond() {
   return new Promise((resolve) => {
     setTimeout(() => {
@@ -40,22 +39,13 @@ async function calculateTime() {
 }
 
 calculateTime();
-=======
-function wait1(t) {
 
-}
+function wait1(t) {}
 
-function wait2(t) {
+function wait2(t) {}
 
-}
+function wait3(t) {}
 
-function wait3(t) {
-
-}
-
-function calculateTime(t1, t2, t3) {
-
-}
+function calculateTime(t1, t2, t3) {}
 
 module.exports = calculateTime;
->>>>>>> a39ff95b395681909e6fa6721382e1bd6578d9de

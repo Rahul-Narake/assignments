@@ -16,6 +16,57 @@ const express = require('express');
 const fs = require('fs');
 const path = require('path');
 const app = express();
+const port = 3000;
 
+const directoryPath = path.resolve('./files');
+
+function getFileNamesInDirectory(directoryPath) {
+  return new Promise((resolve, reject) => {
+    fs.readdir(directoryPath, (err, files) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(files);
+      }
+    });
+  });
+}
+
+app.get('/files', (req, res) => {
+  try {
+    getFileNamesInDirectory(directoryPath)
+      .then((files) => {
+        return res.status(200).json({ files });
+      })
+      .catch((err) => {
+        return res.status(500).json({ message: 'Files not found' });
+      });
+  } catch (error) {
+    res.status(500).json({ message: 'files not found' });
+  }
+});
+
+app.get('/file/:fileName', (req, res) => {
+  try {
+    const { fileName } = req.params;
+    if (fileName) {
+      fs.readFile(`./files/${fileName}`, 'utf-8', (err, data) => {
+        if (data) {
+          return res.status(200).send(data);
+        }
+        if (err) return res.status(404).send('File not found');
+      });
+    }
+  } catch (error) {
+    throw new Error(error);
+  }
+});
+
+app.get('/invalid', (req, res) => {
+  return res.status(404);
+});
+app.listen(port, () => {
+  console.log('server started on port' + port);
+});
 
 module.exports = app;

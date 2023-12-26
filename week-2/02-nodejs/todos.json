@@ -1,1 +1,44 @@
-[]
+[
+  {
+    "_id": "807fcbd8-faf1-4756-aea4-747871b75d7c",
+    "title": "one after update",
+    "completed": true,
+    "description": "one updated successfully"
+  },
+  {
+    "_id": "1b857887-025a-458b-94ea-2034aeba0839",
+    "title": "two",
+    "completed": false,
+    "description": "this is todo two"
+  },
+  {
+    "_id": "ac806661-9b28-40d1-aab1-5a562c13ee4b",
+    "title": "three",
+    "completed": false,
+    "description": "this is todo three"
+  },
+  {
+    "_id": "6d40267f-9165-4b99-9979-81ee9407c220",
+    "title": "four",
+    "completed": false,
+    "description": "this is todo four"
+  },
+  {
+    "_id": "db83f128-9716-45d9-a9b3-79590c936878",
+    "title": "New Todo",
+    "completed": false,
+    "description": "A new todo item"
+  },
+  {
+    "_id": "8e054b56-1547-4472-9650-0a4d76046131",
+    "title": "after update",
+    "completed": true,
+    "description": "updated successfully"
+  },
+  {
+    "_id": "ec3f72a4-629e-47c6-9e91-f9d0f9af68b2",
+    "title": "New Todo",
+    "completed": false,
+    "description": "A new todo item"
+  }
+]
